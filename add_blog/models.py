@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Blog(models.Model):
     project_title = models.CharField(max_length=255, null=True)
     description = models.TextField(null=False)
