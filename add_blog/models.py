@@ -7,5 +7,8 @@ class Blog(models.Model):
     create_post = models.DateTimeField(auto_now_add=True)
     update_post = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.project_title
+
     class Meta:
         db_table = 'blog_project'

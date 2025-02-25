@@ -1,11 +1,10 @@
-from django.contrib import admin
 from django.urls import path
-from add_blog.views import posts
-
+from django.contrib import admin
+from add_blog.views import HomeView, PostView, PostViewDetail
 
 urlpatterns = [
-    path('', posts),
+    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('posts/', posts, name='posts'),
-    path('posts/<id>/', posts, name='posts_detail')
+    path('posts/', PostView.as_view(), name='posts'),
+    path('posts/<int:id>/', PostViewDetail.as_view(), name='posts_detail')
 ]
